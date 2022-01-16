@@ -1,0 +1,339 @@
+#book {
+  width:50vw;
+  height:50vh;
+/*   outline:1px solid black; */
+  position:absolute;
+  left:25vw;
+  top:25vh;
+  perspective:75vw;
+}
+
+#judul {
+  text-align: center;
+  margin-top: 50px;
+}
+
+#book:before {
+  width:1%;
+  height:100%;
+  background:#222;
+  content:'';
+  position:absolute;
+  left:49%;
+  top:0;
+  box-shadow:0px 10px 10px rgba(0,0,0,.75);
+  outline:1px solid black;
+}
+
+.page {
+  width:50%;
+  height:100%;
+  background:radial-gradient(circle at 0% 100%, #777, #ddd 70%);
+  outline:1px solid black;
+  box-shadow:5px 10px 10px rgba(0,0,0,.15);
+  position:absolute;
+  left:50%;
+  top:0;
+  transition:z-index .01s linear 1s, transform 2s linear;
+  transform-origin:0% 50%;
+  z-index:5;
+  cursor:pointer;
+      
+  font-family:monospace;
+  text-align:center;
+  line-height:50vh;
+}
+
+/* #page5 {
+  transform-origin:-1% 50% !important;
+} */
+
+.front, .back {
+  width:100%;
+  height:100%;
+  position:absolute;
+  top:0;
+  left:0;
+    
+  font-family:monospace;
+  text-align:center;
+  line-height:50vh;
+  
+  opacity:0;
+  transition:opacity .1s linear 1s;
+}
+.front {
+  opacity:1;
+  background: white;
+}
+
+
+.back {
+  transform:scaleX(-1);
+}
+
+input {
+  visibility:hidden;
+}
+
+label {
+  width:100%;
+  height:100%;
+  z-index:99;
+  position:absolute;
+  left:0;
+  top:0;
+  margin:0;
+  padding:0;
+/*   pointer-events:none; */
+/*   visibility:hidden; */
+/*   background:red; */
+}
+
+input:checked + .page {
+  transform:rotateY(-180deg); 
+}
+
+input:checked + .page .front {
+  opacity:0;  
+}
+input:checked + .page .back {
+  opacity:1;  
+}
+#eight:checked + .page {
+  z-index:8;
+}
+
+#seven:checked + .page {
+  z-index:7;
+}
+
+#six:checked + .page {
+  z-index:6;
+}
+
+#five:checked + .page {
+  z-index:5;
+}
+#four:checked + .page {
+  z-index:4;
+}
+#three:checked + .page {
+  z-index:3;
+}
+#two:checked + .page {
+  z-index:2;
+}
+#one:checked + .page {
+  z-index:1;
+}
+
+body {
+  width:100vw;
+  height:100vh;
+  overflow:hidden;
+  background-color:azure;
+  background-image:linear-gradient(-45deg, tomato, purple);
+}
+
+/* interior pages styles */
+#page1, #page2, #page3, #page4, #page5, #page6, #page7{
+  background: #222;
+}
+
+#page1 .front {
+  font-size:2vh;
+  letter-spacing:2vh;
+  line-height:50vh;
+  font-weight:900;
+  text-align:right;
+  background:radial-gradient(circle at 70% 50%, black 50%, #222 40%);
+  color:magenta;
+  animation:cover 10s linear infinite;
+}
+@keyframes cover {
+  20% { color:lime }
+  40% { color:dodgerblue }
+  60% { color:gold }
+  80% { color:cyan }
+}
+
+#page1 .back, #page2, #page3, #page4, #page5, #page6, #page7{
+  color:white;
+}
+
+#page8 .back {
+  font-size:2vh;
+  letter-spacing:2vh;
+  line-height:50vh;
+  font-weight:900;
+  text-align:left;
+  background:radial-gradient(circle at 30% 50%, black 50%, #222 40%);
+  color:magenta;
+  padding-left:2vh;
+  animation:cover 10s linear infinite;
+}
+
+#foto1, #foto9 {
+  position: absolute;
+  top: 50px;
+  left: 10px;
+  width: 100px;
+  height: 100px;
+}
+
+#foto2, #foto10{
+  position: absolute;
+  top: 170px;
+  left: 10px;
+  width: 100px;
+  height: 100px;
+}
+
+#foto3, #foto8 {
+  position: absolute;
+  top: 50px;
+  left: 150px;
+  width: 150px;
+}
+
+#foto4, #foto14 {
+  position: absolute;
+  top: 50px;
+  right: 10px;
+  width: 100px;
+}
+
+#foto5, #foto12 {
+  position: absolute;
+  top: 170px;
+  right: 10px;
+  width: 100px;
+}
+
+#foto7, #foto13 {
+  position: absolute;
+  top: 50px;
+  left: 40px;
+  width: 150px;
+}
+
+#foto15 {
+  position: absolute;
+  top: 50px;
+  left: 95px;
+  width: 150px;
+}
+
+#foto16 {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  width: 100px;
+  height: 100px;
+}
+
+#foto17 {
+  position: absolute;
+  top: 50px;
+  left: 190px;
+  width: 100px;
+  height: 100px;
+}
+
+#foto18 {
+  position: absolute;
+  top: 170px;
+  left: 120px;
+  width: 100px;
+  height: 100px;
+}
+
+#foto19 {
+  position: absolute;
+  top: 50px;
+  left: 95px;
+  width: 150px;
+}
+
+#foto20 {
+  position: absolute;
+  top: 50px;
+  left: 15px;
+  width: 150px;
+}
+
+#foto21 {
+  position: absolute;
+  top: 50px;
+  left: 175px;
+  width: 150px;
+}
+
+#foto22 {
+  position: absolute;
+  top: 45%;
+  left: 70px;
+  width: 200px;
+}
+
+#foto23, #foto28 {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  width: 100px;
+  height: 100px;
+}
+
+#foto24, #foto29 {
+  position: absolute;
+  top: 50px;
+  left: 190px;
+  width: 100px;
+  height: 100px;
+}
+
+#foto25, #foto30 {
+  position: absolute;
+  top: 170px;
+  left: 50px;
+  width: 100px;
+  height: 100px;
+}
+
+#foto26, #foto33 {
+  position: absolute;
+  top: 170px;
+  left: 190px;
+  width: 100px;
+  height: 100px;
+}
+
+#foto31, #foto27{
+  position: absolute;
+  top: 50px;
+  left: 55px;
+  width: 230px;
+  height: 230px;
+}
+
+#foto32 {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  width: 100px;
+  height: 100px;
+}
+
+#foto34 {
+  position: absolute;
+  top: 50px;
+  left: 190px;
+  width: 100px;
+  height: 100px;
+}
+
+h2 {
+  line-height: normal;
+  
+}
