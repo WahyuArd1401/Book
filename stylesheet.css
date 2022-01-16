@@ -339,8 +339,9 @@ h2 {
 }
 
 @media (max-width : 670px){
-  body {
-    width: 1000px;
+  img {
+    width: 25%;
+    height: 25%;
   }
 }
   
